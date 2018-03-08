@@ -67,7 +67,7 @@ const createNewInput = () => {
 	const c = document.getElementById('console')
 	
 	// Append a new input to the console
-	c.innerHTML = `${c.innerHTML + globals.domain}:~$ <span id="command" contenteditable="true"></span>`
+	c.insertAdjacentHTML('beforeend', `${globals.domain}:~$ <span id="command" contenteditable="true"></span>`)
 
 	const command = document.getElementById('command')
 
