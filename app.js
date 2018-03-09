@@ -104,7 +104,7 @@ const executeCommand = async cmd => {
 	const command = document.getElementById('command')
 	let response = `\n`
 
-	if (cmd.length > 0) {
+	if (cmd.length > 0 && cmd !== '<br>') {
 
 		// Request response via api
 		response += `${await apiData(globals.api, { q: cmd })}\n`
@@ -113,7 +113,7 @@ const executeCommand = async cmd => {
 	}
 
 	// Remove the current input
-	c.insertBefore(document.createTextNode(command.innerHTML), command)
+	c.insertBefore(document.createTextNode(cmd !== '<br>' ? command.innerHTML : ''), command)
 	command.remove()
 
 	// Output api response
