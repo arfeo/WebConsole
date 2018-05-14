@@ -149,12 +149,12 @@ window.onload = async () => {
 		document.addEventListener('keydown', (e) => {
 			const command = document.getElementById('command');
 
-			if (e.code === 'Enter') {
+			if (e.key  === 'Enter') {
 				e.preventDefault();
 				executeCommand(command.innerHTML);
 			}
 
-			if (e.code === 'ArrowUp') {
+			if (e.key === 'ArrowUp' || e.key === 'Up') {
 				e.preventDefault();
 
 				if (globals.x > 0) {
@@ -164,7 +164,7 @@ window.onload = async () => {
 				}
 			}
 
-			if (e.code === 'ArrowDown') {
+			if (e.key === 'ArrowDown' || e.key === 'Down') {
 				e.preventDefault();
 
 				if (globals.history && globals.x < globals.history.length) {
